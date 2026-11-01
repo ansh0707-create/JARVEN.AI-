@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<title>JARVEN.AI</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #070b18;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1c2945;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #58c7ff;
+}
+
+.status {
+  font-size: 12px;
+  color: #56e6b0;
+}
+
+main {
+  max-width: 750px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+.hero {
+  text-align: center;
+  padding: 30px 0 20px;
+}
+
+.orb {
+  width: 125px;
+  height: 125px;
+  margin: 10px auto 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%,
+    #b9f3ff, #278eff 35%, #162c85 70%, #080d29);
+  box-shadow: 0 0 25px #168dff,
+              0 0 65px #1455bb;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 40px #168dff,
+                0 0 90px #1455bb;
+  }
+}
+
+h1 {
+  font-size: 29px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #91a3c4;
+  font-size: 14px;
+}
+
+.panel {
+  background: #10182b;
+  border: 1px solid #263958;
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.panel h3 {
+  color: #65caff;
+  margin-top: 0;
+}
+
+#messages {
+  min-height: 120px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  background: #1a2943;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.user {
+  border-left: 3px solid #4daeff;
+}
+
+.jarven {
+  border-left: 3px solid #50e4bd;
+}
+
+.controls {
+  display: flex;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #304768;
+  background: #080f20;
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #167ce8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.mic {
+  background: #17365e;
+  font-size: 20px;
+}
+
+.note {
+  color: #8292ae;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.feature {
+  background: #10182b;
+  border: 1px solid #263958;
+  border-radius: 13px;
+  padding: 15px;
+  color: #cbd9f0;
+  font-size: 14px;
+}
+
+.feature span {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #647692;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">JARVEN.AI</div>
+  <div class="status">● SYSTEM ONLINE</div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="orb"></div>
+  <h1>Hello, I'm JARVEN.</h1>
+  <div class="subtitle">
+    Your personal AI assistant.
+    Intelligence meets imagination.
+  </div>
+</section>
+
+<section class="panel">
+  <h3>◈ Conversation</h3>
+
+  <div id="messages">
+    <div class="message jarven">
+      Hello! I am JARVEN.AI. My interface is ready.
+      My AI connection is not configured yet.
+    </div>
+  </div>
+
+  <div class="controls">
+    <input id="userInput"
+      type="text"
+      placeholder="Type your message..."
+      autocomplete="off">
+
+    <button onclick="sendMessage()">Send</button>
+    <button class="mic" onclick="speakDemo()" title="Voice demo">🎙</button>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <span>🧠</span>
+    AI Intelligence
+    <br>Planned
+  </div>
+
+  <div class="feature">
+    <span>🎙️</span>
+    Voice Assistant
+    <br>Demo available
+  </div>
+
+  <div class="feature">
+    <span>🌐</span>
+    Web Research
+    <br>Coming soon
+  </div>
+
+  <div class="feature">
+    <span>💾</span>
+    Smart Memory
+    <br>Coming soon
+  </div>
+</section>
+
+<p class="note">
+  JARVEN.AI — YOUR INTELLIGENCE. YOUR COMMAND.
+</p>
+
+</main>
+
+<footer>
+  Personal AI Assistant Project
+</footer>
+
+<script>
+const messages = document.getElementById("messages");
+const input = document.getElementById("userInput");
+
+function addMessage(text, type) {
+  const div = document.createElement("div");
+  div.className = "message " + type;
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  addMessage(text, "user");
+  input.value = "";
+
+  addMessage(
+    "Your message has been received! My AI brain has not been connected yet. That is our next development step.",
+    "jarven"
+  );
+}
+
+input.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") sendMessage();
+});
+
+function speakDemo() {
+  if (!("speechSynthesis" in window)) {
+    addMessage("Voice playback is not supported in this browser.", "jarven");
+    return;
+  }
+
+  const speech = new SpeechSynthesisUtterance(
+    "Hello. I am Jarven, your personal AI assistant. Systems are ready."
+  );
+
+  speech.rate = 0.92;
+  speech.pitch = 0.95;
+  speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
